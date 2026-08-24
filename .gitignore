@@ -1,0 +1,18 @@
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+
+# Arquivos de sistema e editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Material privado ou de trabalho que não deve ser versionado
+private/
+rascunhos/
