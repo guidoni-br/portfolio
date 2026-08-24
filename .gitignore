@@ -16,3 +16,7 @@ Thumbs.db
 # Material privado ou de trabalho que não deve ser versionado
 private/
 rascunhos/
+
+# Artefatos temporários e pacotes gerados localmente
+tmp/
+portfolio-*.zip
