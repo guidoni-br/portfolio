@@ -115,6 +115,12 @@ Não há sombras nem superfícies elevadas. A profundidade vem da alternância e
 
 **The Flat Page Rule.** Não use sombra para separar blocos; recorra à hierarquia, espaço e regras finas.
 
+## Motion
+
+O movimento reforça a leitura editorial. A abertura entra em sequência — navegação, nome, apresentação e contexto profissional — sem bloquear o conteúdo. Durante a rolagem, os blocos aparecem com deslocamento curto e as miniaturas respondem ao hover ou foco de acordo com a lógica de cada projeto. As demonstrações usam transições rápidas para indicar troca de contexto e atualização de dados.
+
+**The Editorial Motion Rule.** Movimento deve explicar hierarquia, resposta ou continuidade. Não usar loops decorativos, cursor personalizado, partículas ou animações que atrasem a navegação. Todo o sistema respeita `prefers-reduced-motion`.
+
 ## Shapes
 
 O sistema é deliberadamente reto: seções, regras e links não usam cantos arredondados, contêineres ou molduras decorativas. O único elemento circular é o indicador de status de 6px; ele pode ser preenchido, contornado ou suavizado para comunicar produção, pendência e evolução. As regras estruturais usam 1px.
