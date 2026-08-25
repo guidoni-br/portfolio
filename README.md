@@ -1,5 +1,7 @@
 # Portfólio de projetos — Roberto Guidoni
 
+**Site:** [guidoni-br.github.io/portfolio](https://guidoni-br.github.io/portfolio/)
+
 ## Apresentação
 
 Sou Roberto Guidoni, Head de Gestão de Tráfego Pago na Smart desde dezembro de 2025, com atuação em mídia de performance, marketing operations, comunicação, tracking, automação e inovação aplicada ao marketing.
