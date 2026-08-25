@@ -30,6 +30,8 @@ Lidero a operação de mídia da estratégia à execução, incluindo copy, trac
 
 [Ver mapa completo de competências](competencias.html)
 
+[Ver currículo completo online](curriculo.html)
+
 [Baixar currículo profissional em PDF](output/pdf/curriculo-roberto-guidoni.pdf)
 
 - Marketing Operations e mídia paga (Google Ads e Meta Ads), com conhecimento da plataforma TikTok Ads
