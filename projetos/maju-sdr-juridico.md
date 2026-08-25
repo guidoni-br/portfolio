@@ -13,7 +13,16 @@ Leads jurídicos chegam com níveis distintos de informação e intenção. O at
 
 ## Solução e funcionamento
 
-Foi desenvolvido um fluxo automatizado com controle de estado, regras de negócio e uso controlado de inteligência artificial quando necessário. O fluxo trata eventos e tipos de mensagem, identifica leads existentes, previne repetições e mantém o histórico necessário para o encaminhamento.
+Foi desenvolvido um fluxo automatizado em n8n, hospedado em servidor VPS e conectado à API oficial do WhatsApp da Meta. A operação utiliza Chatwoot para o atendimento, Google Sheets como apoio operacional e banco de dados SQL para persistência. O fluxo mantém controle de estado, regras de negócio e uso restrito de inteligência artificial, reduzindo respostas fora do escopo e preservando o histórico necessário para o encaminhamento.
+
+## Arquitetura confirmada
+
+- n8n como orquestrador dos fluxos;
+- API oficial do WhatsApp da Meta;
+- Chatwoot na operação de atendimento;
+- Google Sheets como apoio à rotina;
+- Banco de dados SQL;
+- Hospedagem em servidor VPS.
 
 ## Funcionalidades confirmadas
 
@@ -22,7 +31,8 @@ Foi desenvolvido um fluxo automatizado com controle de estado, regras de negóci
 - Identificação de leads existentes, controle de estado e prevenção de respostas repetitivas;
 - Atendimento inicial, coleta de informações, esclarecimento de dúvidas e avaliação preliminar do potencial caso;
 - Qualificação, encaminhamento humano, registro de informações e controle de spam;
-- Redução de chamadas desnecessárias à IA.
+- Redução de chamadas desnecessárias à IA;
+- Regras, estados e limites de resposta para manter o atendimento controlado e aderente ao fluxo.
 
 ## Status utilizados no fluxo
 
@@ -36,8 +46,4 @@ Foi desenvolvido um fluxo automatizado com controle de estado, regras de negóci
 
 ## Impacto
 
-Automatiza parte importante do primeiro atendimento, organiza informações e permite que o atendimento humano seja acionado com mais contexto. Não substitui advogados nem realiza análise jurídica definitiva.
-
-## Informação pendente
-
-A estrutura mencionada para o projeto — n8n, WhatsApp Cloud API, Chatwoot, Google Sheets e PostgreSQL — precisa ser confirmada antes de ser apresentada como stack definitiva.
+Realiza o atendimento inicial de ponta a ponta, organiza informações e permite que o atendimento humano seja acionado com mais contexto quando necessário. A combinação de regras de negócio, controle de estado e uso restrito de IA reduz desvios e respostas improvisadas. Não substitui advogados nem realiza análise jurídica definitiva.

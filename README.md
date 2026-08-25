@@ -14,12 +14,12 @@ Lidero a operação de mídia da estratégia à execução, incluindo copy, trac
 | --- | --- | --- | --- | --- |
 | Dashboard de gestão de marketing | Marketing Operations | Funcional e em evolução | Centraliza a gestão de campanhas, dados e relatórios da operação. | [Ver projeto](projetos/dashboard-marketing.md) |
 | CRM integrado ao Google Ads | Marketing e vendas | Produção | CRM simples que registra a evolução dos leads e devolve conversões offline ao Google Ads. | [Ver projeto](projetos/crm-conversoes-offline.md) |
-| Maju — SDR jurídico automatizado | Automação e atendimento | Produção | Primeiro atendimento automatizado de leads jurídicos pelo WhatsApp. | [Ver projeto](projetos/maju-sdr-juridico.md) |
+| Maju — SDR jurídico automatizado | Automação e atendimento | Produção | Atendimento completo pelo WhatsApp, com regras de negócio, controle de estado e encaminhamento humano. | [Ver projeto](projetos/maju-sdr-juridico.md) |
 | Nina — agente editorial da Acrux | IA e conteúdo | Funcional | Cria textos de blog em português ou inglês com personalidade e senso crítico próprios. | [Ver projeto](projetos/nina-agente-editorial.md) |
 | Acrux | IA e operações de conteúdo | Publicação pendente de confirmação | Projeto em coautoria para descobrir tendências e gerar matéria-prima para a Nina. | [Ver projeto](projetos/acrux.md) |
-| Clipagem jurídica automatizada | Automação de conteúdo | Produção | Coleta e processa atualizações para apoiar pautas de conteúdo jurídico. | [Ver projeto](projetos/clipagem-juridica.md) |
+| Clipagem jurídica automatizada | Automação de conteúdo | Produção | Acervo pesquisável com filtros por área, fonte, relevância e período. | [Ver projeto](projetos/clipagem-juridica.md) |
 | Rastreador Google/Meta → WhatsApp | Tracking e conversões offline | Funcional e em evolução | Conecta clique, conversa e sinais comerciais. | [Ver projeto](projetos/whatsapp-gclid-tracker.md) |
-| Biblioteca visual para sites com IA | IA e design de sistemas | Funcional e em evolução | Base de conhecimento para orientar a criação de sites e landing pages por agentes de IA. | [Ver projeto](projetos/biblioteca-visual-sites.md) |
+| Biblioteca visual para sites com IA | IA e design de sistemas | Funcional e em evolução | Biblioteca viva que aprende com referências e amplia o repertório visual usado pelos agentes. | [Ver projeto](projetos/biblioteca-visual-sites.md) |
 | Dashboard de acompanhamento processual | Legal Operations | Em desenvolvimento | Monitora movimentações processuais e apresenta atualizações em um dashboard. | [Ver projeto](projetos/acompanhamento-processual.md) |
 | Limpador inteligente de termos | Mídia paga e IA | Funcional e em evolução | Analisa termos de pesquisa e sugere negativas exatas. | [Ver projeto](projetos/limpador-termos-ia.md) |
 | Dashboard financeiro local | Operações e dados | Projeto pessoal experimental | Organiza transações, categorias, filtros e visualizações financeiras. | [Ver projeto](projetos/dashboard-financeiro.md) |
