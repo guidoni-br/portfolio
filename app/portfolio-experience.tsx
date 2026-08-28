@@ -35,48 +35,78 @@ const projectVisuals: Record<string, string> = {
 
 export default function PortfolioExperience() {
   const [selectedId, setSelectedId] = useState('ads');
+  const [demoOpen, setDemoOpen] = useState(false);
   const selected = projects.find((project) => project.id === selectedId) ?? projects[0];
+
+  const openProject = (id: string) => {
+    setSelectedId(id);
+    setDemoOpen(true);
+    window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  };
+
+  if (demoOpen) {
+    return (
+      <section className="demo-workspace" aria-label={`Demonstração de ${selected.name}`}>
+        <header className="demo-workspace-top">
+          <button onClick={() => setDemoOpen(false)}>← Voltar aos projetos</button>
+          <span>Projetos navegáveis · dados fictícios</span>
+        </header>
+        <div className="demo-workspace-layout">
+          <aside className="demo-project-nav">
+            <h2>Projetos</h2>
+            <nav aria-label="Escolher outra demonstração">
+              {projects.map((project, index) => (
+                <button className={project.id === selected.id ? 'active' : ''} onClick={() => setSelectedId(project.id)} key={project.id} aria-current={project.id === selected.id ? 'page' : undefined}>
+                  <small>{String(index + 1).padStart(2, '0')} · {project.category}</small>
+                  <strong>{project.name}</strong>
+                </button>
+              ))}
+            </nav>
+          </aside>
+          <main className="demo-stage">
+            <header className="demo-stage-head">
+              <div><h1>{selected.name}</h1><p>{selected.solution}</p></div>
+              <span>Interativo · dados fictícios</span>
+            </header>
+            <div className="demo-application" key={selected.id}><ProjectDemo projectId={selected.id} /></div>
+            <dl className="demo-context">
+              <div><dt>Problema</dt><dd>{selected.problem}</dd></div>
+              <div><dt>Minha participação</dt><dd>{selected.contribution}</dd></div>
+            </dl>
+          </main>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <>
-      <section className="statement" aria-labelledby="statement-title">
-        <p className="section-index">A tese</p>
-        <h2 id="statement-title">O problema vem antes<br />da <em>tecnologia.</em></h2>
-        <p>Eu identifico gargalos de marketing e operação, desenho a solução e uso desenvolvimento assistido por IA para colocá-la em funcionamento. Não como exercício visual, mas como ferramenta de trabalho.</p>
-      </section>
-
       <section id="projetos" className="projects-section" aria-labelledby="projects-title">
         <div className="section-heading">
-          <p className="section-index">01 / Projetos</p>
-          <h2 id="projects-title">Onze soluções.<br /><em>Um mesmo método.</em></h2>
-          <p>Selecione um projeto para entender o problema, a solução e minha participação. As demonstrações usam dados fictícios.</p>
+          <p className="section-index">Projetos e sistemas</p>
+          <h2 id="projects-title">Projetos<br /><em>navegáveis.</em></h2>
+          <p><strong>Pouco tempo?</strong> Comece pelos três primeiros. As demonstrações usam dados fictícios e mantêm as principais interações de cada sistema.</p>
         </div>
 
         <div className="project-browser">
           <div className="project-list" role="list" aria-label="Projetos">
             {projects.map((project, index) => (
-              <button className={project.id === selected.id ? 'project-row active' : 'project-row'} onClick={() => setSelectedId(project.id)} key={project.id} aria-pressed={project.id === selected.id}>
+              <button className="project-row" onClick={() => openProject(project.id)} key={project.id}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
-                <i aria-hidden="true">→</i>
-                <strong>{project.name}</strong>
                 <span className={`project-card-visual visual-${projectVisuals[project.id]}`} aria-hidden="true" />
+                <span className="project-row-copy"><strong>{project.name}</strong><p>{project.solution}</p></span>
                 <small>{project.category}</small>
+                <i aria-hidden="true">→</i>
               </button>
             ))}
           </div>
-
-          <article className="project-detail" aria-live="polite" key={selected.id}>
-            <div className="detail-top"><span>{selected.category}</span><span className="status"><i />{selected.status}</span></div>
-            <h3>{selected.name}</h3>
-            <dl>
-              <div><dt>Problema</dt><dd>{selected.problem}</dd></div>
-              <div><dt>Solução</dt><dd>{selected.solution}</dd></div>
-              <div><dt>Minha participação</dt><dd>{selected.contribution}</dd></div>
-            </dl>
-            <ul>{selected.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
-            <ProjectDemo projectId={selected.id} />
-          </article>
         </div>
+      </section>
+
+      <section className="statement" aria-labelledby="statement-title">
+        <p className="section-index">O método</p>
+        <h2 id="statement-title">O problema vem antes<br />da <em>tecnologia.</em></h2>
+        <p>Eu identifico gargalos de marketing e operação, desenho a solução e uso desenvolvimento assistido por IA para colocá-la em funcionamento. Não como exercício visual, mas como ferramenta de trabalho.</p>
       </section>
 
       <footer id="contato" className="contact-section">
