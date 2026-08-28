@@ -50,12 +50,11 @@ export default function PortfolioExperience() {
         <div className="project-browser">
           <div className="project-list" role="list" aria-label="Projetos">
             {projects.map((project, index) => (
-              <button className={`${project.id === selected.id ? 'project-row active' : 'project-row'}${index === 0 ? ' project-row-lead' : ''}`} onClick={() => setSelectedId(project.id)} key={project.id} aria-pressed={project.id === selected.id}>
+              <button className={project.id === selected.id ? 'project-row active' : 'project-row'} onClick={() => setSelectedId(project.id)} key={project.id} aria-pressed={project.id === selected.id}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
-                <span className="project-card-status">{project.status}</span>
                 <strong>{project.name}</strong>
-                <p>{project.solution}</p>
-                <small>{project.category}</small><i aria-hidden="true">→</i>
+                <small>{project.category}</small>
+                <i aria-hidden="true">→</i>
               </button>
             ))}
           </div>
