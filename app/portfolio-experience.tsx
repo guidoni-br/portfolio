@@ -28,6 +28,11 @@ const projects: Project[] = [
   { id: 'financeiro', name: 'Dashboard financeiro', category: 'Dados · projeto pessoal', status: 'Experimental', problem: 'Era preciso experimentar formas mais claras de organizar e visualizar gastos pessoais.', solution: 'Ferramenta local para receitas, despesas, saldo, categorias, filtros e exportação.', contribution: 'Projeto pessoal idealizado e construído como laboratório de desenvolvimento assistido por IA.', features: ['Filtros por período', 'Categorias', 'Gráficos e saldo', 'SQLite local'] },
 ];
 
+const projectVisuals: Record<string, string> = {
+  ads: 'dashboard', crm: 'crm', maju: 'chat', tracker: 'track', nina: 'editor', acrux: 'pipeline',
+  clipagem: 'news', biblioteca: 'library', processual: 'process', termos: 'terms', financeiro: 'finance',
+};
+
 export default function PortfolioExperience() {
   const [selectedId, setSelectedId] = useState('ads');
   const selected = projects.find((project) => project.id === selectedId) ?? projects[0];
@@ -52,9 +57,10 @@ export default function PortfolioExperience() {
             {projects.map((project, index) => (
               <button className={project.id === selected.id ? 'project-row active' : 'project-row'} onClick={() => setSelectedId(project.id)} key={project.id} aria-pressed={project.id === selected.id}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
-                <strong>{project.name}</strong>
-                <small>{project.category}</small>
                 <i aria-hidden="true">→</i>
+                <strong>{project.name}</strong>
+                <span className={`project-card-visual visual-${projectVisuals[project.id]}`} aria-hidden="true" />
+                <small>{project.category}</small>
               </button>
             ))}
           </div>

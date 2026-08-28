@@ -279,9 +279,9 @@ a { color: inherit; text-decoration: none; }
 .project-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-left: 1px solid #595751; }
 .project-row {
   width: 100%;
-  min-height: 154px;
+  min-height: 184px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 112px;
   grid-template-rows: auto 1fr auto;
   align-items: start;
   gap: 15px;
@@ -296,9 +296,34 @@ a { color: inherit; text-decoration: none; }
   transition: background .25s, color .25s, transform .25s;
 }
 .project-row > span, .project-row small { font-family: monospace; font-size: 9px; letter-spacing: .055em; text-transform: uppercase; color: var(--faint); }
-.project-row strong { grid-column: 1 / 3; align-self: center; font-family: Georgia, serif; font-size: clamp(1.45rem, 2vw, 2rem); font-weight: 400; line-height: 1; letter-spacing: -.025em; }
-.project-row small { align-self: end; }
-.project-row i { font-style: normal; font-size: 17px; }
+.project-row strong { grid-column: 1; align-self: center; padding-right: 16px; font-family: Georgia, serif; font-size: clamp(1.35rem, 1.8vw, 1.9rem); font-weight: 400; line-height: 1; letter-spacing: -.025em; }
+.project-row small { grid-column: 1 / 3; align-self: end; }
+.project-row i { grid-column: 2; grid-row: 1; justify-self: end; font-style: normal; font-size: 17px; }
+.project-card-visual { position: relative; grid-column: 2; grid-row: 2; align-self: center; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid currentColor; background: var(--paper); color: var(--ink) !important; transition: transform .35s cubic-bezier(.16,1,.3,1), background .25s, color .25s; }
+.project-card-visual::before, .project-card-visual::after { content: ""; position: absolute; display: block; }
+.project-row:hover .project-card-visual, .project-row:focus-visible .project-card-visual { transform: translateY(-3px); }
+.project-row.active .project-card-visual, .project-row:hover .project-card-visual, .project-row:focus-visible .project-card-visual { background: var(--ink); color: var(--paper) !important; }
+.visual-dashboard::before { inset: 0 68% 0 0; background: currentColor; }
+.visual-dashboard::after { left: 38%; right: 7%; bottom: 13%; height: 38%; background: linear-gradient(to top,currentColor 0 32%,transparent 32%) 0 100%/13% 100%,linear-gradient(to top,currentColor 0 78%,transparent 78%) 25% 100%/13% 100%,linear-gradient(to top,currentColor 0 53%,transparent 53%) 50% 100%/13% 100%,linear-gradient(to top,currentColor 0 89%,transparent 89%) 75% 100%/13% 100%; background-repeat: no-repeat; }
+.visual-crm::before { inset: 10%; background: repeating-linear-gradient(90deg,transparent 0 17%,currentColor 17% 17.7%,transparent 17.7% 20%); }
+.visual-crm::after { inset: 28% 7% 17%; background: repeating-linear-gradient(90deg,currentColor 0 16%,transparent 16% 20%); opacity: .35; }
+.visual-chat::before { inset: 9% 34%; border: 3px solid currentColor; }
+.visual-chat::after { inset: 28% 38% 20%; background: repeating-linear-gradient(to bottom,currentColor 0 7%,transparent 7% 24%); }
+.visual-editor::before { inset: 0 72% 0 0; background: currentColor; opacity: .25; border-right: 1px solid currentColor; }
+.visual-editor::after { inset: 18% 9% 18% 36%; background: repeating-linear-gradient(to bottom,currentColor 0 3%,transparent 3% 19%); }
+.visual-pipeline::before, .visual-track::before { left: 8%; right: 8%; top: 49%; height: 1px; background: currentColor; }
+.visual-pipeline::after { inset: 35% 7%; background: radial-gradient(circle at 0 50%,currentColor 0 5px,transparent 6px),radial-gradient(circle at 33% 50%,transparent 0 4px,currentColor 5px,transparent 6px),radial-gradient(circle at 66% 50%,currentColor 0 5px,transparent 6px),radial-gradient(circle at 100% 50%,currentColor 0 5px,transparent 6px); }
+.visual-news::before { inset: 12%; background: repeating-linear-gradient(to bottom,currentColor 0 1px,transparent 1px 10px); }
+.visual-news::after { inset: 12% 62% 12% 12%; background: currentColor; }
+.visual-track::after { inset: 41% 8%; background: repeating-linear-gradient(90deg,currentColor 0 6px,transparent 6px 19%); }
+.visual-library::before { inset: 9%; background: repeating-linear-gradient(90deg,currentColor 0 27%,transparent 27% 36%); }
+.visual-library::after { inset: 55% 9% 9%; background: var(--paper); mix-blend-mode: difference; }
+.visual-process::before { left: 23%; top: 10%; bottom: 10%; width: 1px; background: currentColor; }
+.visual-process::after { inset: 12% 12% 12% 19%; background: radial-gradient(circle at 6% 10%,currentColor 0 4px,transparent 5px),radial-gradient(circle at 6% 50%,currentColor 0 4px,transparent 5px),radial-gradient(circle at 6% 90%,currentColor 0 4px,transparent 5px),repeating-linear-gradient(to bottom,transparent 0 29%,currentColor 29% 30%,transparent 30% 40%); }
+.visual-terms::before { inset: 13%; background: repeating-linear-gradient(to bottom,currentColor 0 1px,transparent 1px 11px); }
+.visual-terms::after { left: 12%; right: 48%; top: 41%; height: 10px; background: currentColor; }
+.visual-finance::before { inset: 17% 8%; background: linear-gradient(154deg,transparent 0 46%,currentColor 47% 49%,transparent 50%),linear-gradient(22deg,transparent 0 44%,currentColor 45% 47%,transparent 48%); }
+.visual-finance::after { left: 8%; right: 8%; bottom: 13%; height: 1px; background: currentColor; }
 .project-row:hover, .project-row:focus-visible, .project-row.active { background: var(--paper); color: var(--ink); outline: none; }
 .project-row:hover, .project-row:focus-visible { transform: translateY(-3px); }
 .project-row:hover :is(span,small), .project-row:focus-visible :is(span,small), .project-row.active :is(span,small) { color: var(--muted); }
@@ -480,7 +505,8 @@ a { color: inherit; text-decoration: none; }
   .section-heading > p:last-child { max-width: 460px; margin-top: 42px; }
   .project-browser { grid-template-columns: 1fr; gap: 38px; margin-top: 70px; }
   .project-list { grid-template-columns: 1fr; }
-  .project-row { min-height: 126px; padding: 17px; }
+  .project-row { min-height: 152px; grid-template-columns: 1fr 88px; padding: 17px; }
+  .project-row strong { font-size: clamp(1.3rem, 6.5vw, 1.8rem); }
   .project-row small { display: block; }
   .project-detail { position: static; min-height: 0; display: block; margin-top: 28px; padding: 20px 17px; }
   .project-detail > .inline-demo { margin-top: 34px; }
