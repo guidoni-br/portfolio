@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ProjectDemo from './project-demo';
 
 type Project = {
   id: string;
@@ -30,7 +31,6 @@ const projects: Project[] = [
 export default function PortfolioExperience() {
   const [selectedId, setSelectedId] = useState('ads');
   const selected = projects.find((project) => project.id === selectedId) ?? projects[0];
-  const demoUrl = `https://guidoni-br.github.io/portfolio/demonstracoes.html#${selected.id}`;
 
   return (
     <>
@@ -68,7 +68,7 @@ export default function PortfolioExperience() {
               <div><dt>Minha participação</dt><dd>{selected.contribution}</dd></div>
             </dl>
             <ul>{selected.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
-            <a className="demo-link" href={demoUrl} target="_blank" rel="noopener">Abrir demonstração navegável <span>↗</span></a>
+            <ProjectDemo projectId={selected.id} />
           </article>
         </div>
       </section>

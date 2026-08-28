@@ -9,7 +9,7 @@ export default function SiteNav({ active }: SiteNavProps) {
         <a aria-current={active === 'projetos' ? 'page' : undefined} href="/projetos">Projetos</a>
         <a aria-current={active === 'competencias' ? 'page' : undefined} href="/competencias">Competências</a>
       </div>
-      <a className="nav-contact" href="https://wa.me/5511965188428" target="_blank" rel="noopener">Contato ↗</a>
+      <a className="nav-contact" href="https://wa.me/5511965188428" target="_blank" rel="noopener">WhatsApp ↗</a>
     </nav>
   );
 }

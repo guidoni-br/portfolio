@@ -48,7 +48,7 @@ export default function CompetenciasPage() {
       </section>
 
       <section className="tools-section">
-        <div className="full-heading"><p className="section-index">Ferramentas</p><h2>Plataformas que fazem<br />parte da <em>rotina.</em></h2></div>
+        <div className="full-heading"><p className="section-index">Ferramentas</p><h2>Ferramentas da<br /><em>rotina.</em></h2></div>
         <RatingList items={tools} />
       </section>
 

@@ -23,7 +23,7 @@ export default function CurriculoPage() {
         <div className="inner-hero-copy">
           <strong>Head de Gestão de Tráfego Pago</strong>
           <p>Estratégia, execução e evolução da operação de mídia, além da construção de sistemas que conectam marketing, vendas e dados.</p>
-          <div><a href="mailto:rrodriguesguidoni@gmail.com">E-mail ↗</a><a href="https://www.linkedin.com/in/roberto-guidoni-3a348646/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+          <div><a className="hero-whatsapp" href="https://wa.me/5511965188428" target="_blank" rel="noopener">Falar no WhatsApp ↗</a><a href="mailto:rrodriguesguidoni@gmail.com">E-mail ↗</a><a href="https://www.linkedin.com/in/roberto-guidoni-3a348646/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
         </div>
       </header>
 
