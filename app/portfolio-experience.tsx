@@ -27,13 +27,6 @@ const projects: Project[] = [
   { id: 'financeiro', name: 'Dashboard financeiro', category: 'Dados · projeto pessoal', status: 'Experimental', problem: 'Era preciso experimentar formas mais claras de organizar e visualizar gastos pessoais.', solution: 'Ferramenta local para receitas, despesas, saldo, categorias, filtros e exportação.', contribution: 'Projeto pessoal idealizado e construído como laboratório de desenvolvimento assistido por IA.', features: ['Filtros por período', 'Categorias', 'Gráficos e saldo', 'SQLite local'] },
 ];
 
-const skillGroups = [
-  ['Estratégia', 'Visão integrada de marketing', 'Aquisição', 'Marketing Operations', 'Jornada e público'],
-  ['Mídia e dados', 'Google Ads', 'Meta Ads', 'Otimização', 'Tracking', 'Conversões offline'],
-  ['Produto e automação', 'Fluxos', 'Regras de negócio', 'IA aplicada', 'Ferramentas internas', 'Integrações'],
-  ['Liderança', 'Comunicação', 'Pensamento crítico', 'Resolução de problemas', 'Coordenação prática'],
-];
-
 export default function PortfolioExperience() {
   const [selectedId, setSelectedId] = useState('ads');
   const selected = projects.find((project) => project.id === selectedId) ?? projects[0];
@@ -66,7 +59,7 @@ export default function PortfolioExperience() {
             ))}
           </div>
 
-          <article className="project-detail" aria-live="polite">
+          <article className="project-detail" aria-live="polite" key={selected.id}>
             <div className="detail-top"><span>{selected.category}</span><span className="status"><i />{selected.status}</span></div>
             <h3>{selected.name}</h3>
             <dl>
@@ -80,46 +73,8 @@ export default function PortfolioExperience() {
         </div>
       </section>
 
-      <section id="perfil" className="profile-section" aria-labelledby="profile-title">
-        <div className="section-heading light-heading">
-          <p className="section-index">02 / Perfil</p>
-          <h2 id="profile-title">Mídia, operação<br />e <em>produto.</em></h2>
-        </div>
-        <div className="profile-grid">
-          <article className="current-role">
-            <div className="role-meta"><span>Atual</span><span>Desde dezembro de 2025</span></div>
-            <h3>Head de Gestão de<br />Tráfego Pago · Smart</h3>
-            <p>Cuido da operação completa de mídia paga e da frente de inovação da agência: estratégia, execução, tracking, copy, análise e construção dos sistemas usados pela equipe e pelos clientes.</p>
-            <p>Coordeno diretamente um estagiário e uma pessoa desenvolvedora.</p>
-          </article>
-          <div className="career-list">
-            <div><span>Original SP Tattoo</span><strong>Auxiliar de Marketing Digital</strong></div>
-            <div><span>Loja Paiol</span><strong>Vendas consultivas</strong></div>
-            <div><span>Unittá</span><strong>Redação publicitária</strong></div>
-            <div><span>Formação</span><strong>Comunicação Social · Jornalismo</strong></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="skills-section" aria-labelledby="skills-title">
-        <div className="section-heading">
-          <p className="section-index">03 / Competências</p>
-          <h2 id="skills-title">Repertório que<br /><em>se conecta.</em></h2>
-        </div>
-        <div className="skill-grid">
-          {skillGroups.map(([title, ...skills], index) => (
-            <article key={title}>
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
-              <ul>{skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
-            </article>
-          ))}
-        </div>
-        <a className="outline-link" href="https://guidoni-br.github.io/portfolio/competencias.html" target="_blank" rel="noopener">Ver competências e ferramentas completas ↗</a>
-      </section>
-
       <footer id="contato" className="contact-section">
-        <p className="section-index">04 / Contato</p>
+        <p className="section-index">02 / Contato</p>
         <div>
           <h2>Tem um desafio<br /><em>real?</em></h2>
           <p>Estou aberto a posições CLT ou PJ e a projetos em que mídia, operação e tecnologia precisem trabalhar juntas.</p>
