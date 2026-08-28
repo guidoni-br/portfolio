@@ -28,6 +28,7 @@ function RatingList({ items }: { items: Rated[] }) {
 
 export default function CompetenciasPage() {
   const featured: Rated[] = [['Visão integrada de marketing',5],['Google Ads',5],['Marketing Operations',5],['Automação de processos',5],['Construção de dashboards',5],['Comunicação',5]];
+  const featuredTools: Rated[] = [['Google Ads',5],['Meta Ads',5],['Google Sheets',5],['n8n',4],['Codex',5],['ChatGPT',5]];
   return (
     <main className="inner-page skills-page">
       <SiteNav active="competencias" />
@@ -39,18 +40,24 @@ export default function CompetenciasPage() {
 
       <section className="featured-skills">
         <p className="section-index">Resumo</p>
-        <RatingList items={featured} />
+        <div className="featured-columns">
+          <div><p className="summary-label">Competências principais</p><RatingList items={featured} /></div>
+          <div><p className="summary-label">Ferramentas principais</p><RatingList items={featuredTools} /></div>
+        </div>
       </section>
 
-      <section className="full-competencies">
-        <div className="full-heading"><p className="section-index">Avaliação completa</p><h2>Competências por<br /><em>categoria.</em></h2></div>
-        <div className="competency-groups">{groups.map((group, index) => <article className={`competency-group ${group.tone}`} key={group.title}><div className="group-title"><span>0{index + 1}</span><h3>{group.title}</h3></div><RatingList items={group.items} /></article>)}</div>
-      </section>
+      <details className="skills-complete">
+        <summary><span className="label-closed">Ver avaliação completa</span><span className="label-open">Recolher avaliação</span><i aria-hidden="true">+</i></summary>
+        <section className="full-competencies">
+          <div className="full-heading"><p className="section-index">Avaliação completa</p><h2>Competências por<br /><em>categoria.</em></h2></div>
+          <div className="competency-groups">{groups.map((group, index) => <article className={`competency-group ${group.tone}`} key={group.title}><div className="group-title"><span>0{index + 1}</span><h3>{group.title}</h3></div><RatingList items={group.items} /></article>)}</div>
+        </section>
 
-      <section className="tools-section">
-        <div className="full-heading"><p className="section-index">Ferramentas</p><h2>Ferramentas da<br /><em>rotina.</em></h2></div>
-        <RatingList items={tools} />
-      </section>
+        <section className="tools-section">
+          <div className="full-heading"><p className="section-index">Ferramentas</p><h2>Ferramentas da<br /><em>rotina.</em></h2></div>
+          <RatingList items={tools} />
+        </section>
+      </details>
 
       <footer className="skills-footer"><a href="/curriculo">← Voltar ao currículo</a><a href="/projetos">Ver projetos ↗</a></footer>
     </main>
